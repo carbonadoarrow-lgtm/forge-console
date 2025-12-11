@@ -1,0 +1,43 @@
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001/api"
+
+export const API_ENDPOINTS = {
+  forge: {
+    skills: `${API_BASE_URL}/forge/skills`,
+    skill: (id: string) => `${API_BASE_URL}/forge/skills/${id}`,
+    runSkill: (id: string) => `${API_BASE_URL}/forge/skills/${id}/run`,
+    missions: `${API_BASE_URL}/forge/missions`,
+    mission: (id: string) => `${API_BASE_URL}/forge/missions/${id}`,
+    runMission: (id: string) => `${API_BASE_URL}/forge/missions/${id}/run`,
+    runs: `${API_BASE_URL}/forge/runs`,
+    run: (id: string) => `${API_BASE_URL}/forge/runs/${id}`,
+    runLogs: (id: string) => `${API_BASE_URL}/forge/runs/${id}/logs`,
+    reports: `${API_BASE_URL}/forge/reports`,
+    report: (id: string) => `${API_BASE_URL}/forge/reports/${id}`,
+    artifacts: `${API_BASE_URL}/forge/artifacts`,
+    systemStatus: `${API_BASE_URL}/forge/system/status`,
+  },
+  orunmila: {
+    skills: `${API_BASE_URL}/orunmila/skills`,
+    skill: (id: string) => `${API_BASE_URL}/orunmila/skills/${id}`,
+    runSkill: (id: string) => `${API_BASE_URL}/orunmila/skills/${id}/run`,
+    missions: `${API_BASE_URL}/orunmila/missions`,
+    mission: (id: string) => `${API_BASE_URL}/orunmila/missions/${id}`,
+    runMission: (id: string) => `${API_BASE_URL}/orunmila/missions/${id}/run`,
+    runs: `${API_BASE_URL}/orunmila/runs`,
+    run: (id: string) => `${API_BASE_URL}/orunmila/runs/${id}`,
+    runLogs: (id: string) => `${API_BASE_URL}/orunmila/runs/${id}/logs`,
+    reports: `${API_BASE_URL}/orunmila/reports`,
+    report: (id: string) => `${API_BASE_URL}/orunmila/reports/${id}`,
+    dailyState: `${API_BASE_URL}/orunmila/state/daily`,
+    dailyStateHistory: `${API_BASE_URL}/orunmila/state/daily/history`,
+    cycleState: `${API_BASE_URL}/orunmila/state/cycle-4w`,
+    structuralState: `${API_BASE_URL}/orunmila/state/structural`,
+    oracleDashboard: `${API_BASE_URL}/orunmila/oracle/dashboard`,
+  },
+  chat: {
+    sessions: `${API_BASE_URL}/chat/sessions`,
+    session: (id: string) => `${API_BASE_URL}/chat/sessions/${id}`,
+    messages: (id: string) => `${API_BASE_URL}/chat/sessions/${id}/messages`,
+    stream: (id: string) => `${API_BASE_URL}/chat/sessions/${id}/stream`,
+  },
+}
