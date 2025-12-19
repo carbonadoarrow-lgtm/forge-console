@@ -15,7 +15,7 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
     failed: 'destructive',
     error: 'destructive',
     critical: 'destructive',
-    cancelled: 'outline',
+    cancelled: 'secondary',
     warning: 'warning',
     degraded: 'warning',
   };
