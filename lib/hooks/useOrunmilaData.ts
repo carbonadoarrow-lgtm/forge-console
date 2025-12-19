@@ -113,7 +113,7 @@ export const useOrunmilaDailyStateHistory = () => {
   });
 };
 
-export const useOrunmilaCycle4WState = () => {
+export const useOrunmilaCycleState = () => {
   return useQuery({
     queryKey: ['orunmila', 'state', 'cycle-4w'],
     queryFn: orunmilaStateApi.getCycle4W,

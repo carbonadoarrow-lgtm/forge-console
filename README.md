@@ -179,7 +179,7 @@ The app expects backend APIs at:
 
 All types are defined in `lib/types/index.ts`:
 - `Skill`, `Mission`, `Run`, `Report`
-- `DailyState`, `Cycle4WState`, `StructuralState`
+- `DailyState`, `CycleState`, `StructuralState`
 - `ChatSession`, `ChatMessage`
 - API response shapes
 

@@ -118,17 +118,16 @@ export interface DailyState {
   }>;
 }
 
-export interface Cycle4WState {
+export interface CycleState {
   startDate: string;
   endDate: string;
-  currentWeek: number;
   stance: string;
   lessons: string[];
   performance?: {
+    trades: number;
     wins: number;
     losses: number;
-    winRate: number;
-    profitFactor: number;
+    pnl: number;
   };
 }
 

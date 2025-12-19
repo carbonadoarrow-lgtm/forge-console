@@ -16,7 +16,7 @@ I've created the **complete foundational structure** for the Forge Console appli
 2. **Type System**
    - Complete TypeScript definitions for all entities
    - Sphere, Skill, Mission, Run, Report types
-   - State types (DailyState, Cycle4WState, StructuralState)
+   - State types (DailyState, CycleState, StructuralState)
    - Chat and capability types
 
 3. **API Architecture**
