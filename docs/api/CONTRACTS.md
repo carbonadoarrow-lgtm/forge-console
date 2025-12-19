@@ -234,7 +234,7 @@ Get all Forge artifacts.
     "runId": "run-123",
     "sphere": "forge",
     "createdAt": "2025-12-10T12:05:00Z",
-    "url": "http://localhost:3001/artifacts/run-123/output.log"
+    "url": "https://7d2majjsda.us-east-1.awsapprunner.com/api/artifacts/run-123/output.log"
   }
 ]
 ```

@@ -7,7 +7,7 @@ This guide walks you through connecting the Forge Console frontend to the live b
 The Forge Console can run in two modes:
 
 1. **Mock Mode** - Uses in-memory mock data (default for development)
-2. **Live Mode** - Connects to the FastAPI backend at `http://localhost:8000/api`
+2. **Live Mode** - Connects to the FastAPI backend at `https://7d2majjsda.us-east-1.awsapprunner.com/api`
 
 ## Prerequisites
 
@@ -61,16 +61,16 @@ Open your browser or use curl:
 
 ```bash
 # Root endpoint
-curl http://localhost:8000/
+curl https://7d2majjsda.us-east-1.awsapprunner.com/
 
 # Health check
-curl http://localhost:8000/healthz
+curl https://7d2majjsda.us-east-1.awsapprunner.com/healthz
 
 # Get Forge skills
-curl http://localhost:8000/api/forge/skills
+curl https://7d2majjsda.us-east-1.awsapprunner.com/api/forge/skills
 
 # Get Orunmila daily state
-curl http://localhost:8000/api/orunmila/state/daily
+curl https://7d2majjsda.us-east-1.awsapprunner.com/api/orunmila/state/daily
 ```
 
 ## Frontend Setup
@@ -93,7 +93,7 @@ Edit `.env.local`:
 
 ```env
 # Point to the backend API
-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
+NEXT_PUBLIC_API_BASE_URL=https://7d2majjsda.us-east-1.awsapprunner.com/api
 
 # Optional: Set to true to use mock data instead
 # NEXT_PUBLIC_USE_MOCK_DATA=false
@@ -155,7 +155,7 @@ pip install -r requirements.txt
 
 ### CORS Errors
 
-**Error**: `Access to fetch at 'http://localhost:8000/api/...' from origin 'http://localhost:3000' has been blocked by CORS policy`
+**Error**: `Access to fetch at 'https://7d2majjsda.us-east-1.awsapprunner.com/api/...' from origin 'http://localhost:3000' has been blocked by CORS policy`
 
 **Solution**: Check backend `src/config.py` includes `http://localhost:3000` in `cors_origins`:
 
@@ -170,8 +170,8 @@ Restart the backend after changing.
 **Error**: `Network error or server unavailable`
 
 **Solution**:
-1. Verify backend is running: `curl http://localhost:8000/healthz`
-2. Check `.env.local` has correct API URL: `NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api`
+1. Verify backend is running: `curl https://7d2majjsda.us-east-1.awsapprunner.com/healthz`
+2. Check `.env.local` has correct API URL: `NEXT_PUBLIC_API_BASE_URL=https://7d2majjsda.us-east-1.awsapprunner.com/api`
 3. Restart frontend: `npm run dev`
 
 ### Empty Data
@@ -217,8 +217,8 @@ npm run dev
 
 With the backend running, view interactive API docs at:
 
-- **Swagger UI**: http://localhost:8000/api/docs
-- **ReDoc**: http://localhost:8000/api/redoc
+- **Swagger UI**: https://7d2majjsda.us-east-1.awsapprunner.com/api/docs
+- **ReDoc**: https://7d2majjsda.us-east-1.awsapprunner.com/api/redoc
 
 ## Development Workflow
 

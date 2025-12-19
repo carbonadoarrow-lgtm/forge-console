@@ -1,8 +1,8 @@
 // API client configuration and base functions
 
 // Use NEXT_PUBLIC_API_BASE_URL for production (set in Amplify env vars)
-// Defaults to localhost:8001 for local development (forge-backend default port)
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8001';
+// Defaults to live backend URL for production
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://7d2majjsda.us-east-1.awsapprunner.com/api';
 
 export interface ApiError {
   message: string;

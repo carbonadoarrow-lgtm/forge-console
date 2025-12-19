@@ -70,7 +70,7 @@ export default function ActivityPage() {
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Failed to load some activity data. Check that backend is running at http://localhost:8001
+            Failed to load some activity data. Check that backend is running at https://7d2majjsda.us-east-1.awsapprunner.com/api
           </AlertDescription>
         </Alert>
       )}

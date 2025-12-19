@@ -221,7 +221,7 @@ Use these cards to quickly assess the balance of internal vs. external workload.
    ```
 2. Verify backend is responding:
    ```
-   curl http://localhost:8001/api/health
+   curl https://7d2majjsda.us-east-1.awsapprunner.com/api/health
    ```
 3. Restart backend:
    ```
@@ -292,12 +292,12 @@ Use these cards to quickly assess the balance of internal vs. external workload.
 **Resolution Steps**:
 1. Verify backend is running:
    ```
-   Visit http://localhost:8001/api/docs
+   Visit https://7d2majjsda.us-east-1.awsapprunner.com/api/docs
    Should see FastAPI Swagger UI
    ```
 2. Test jobs API directly:
    ```
-   curl http://localhost:8001/api/jobs
+   curl https://7d2majjsda.us-east-1.awsapprunner.com/api/jobs
    Should return JSON array of jobs
    ```
 3. If backend returns empty array:
@@ -357,7 +357,7 @@ Below are suggested improvements to labels, tooltips, and empty state messages f
 - **Proposed**: Add explanatory text if loading takes > 3 seconds:
   ```
   "Loading chat sessions…
-  If this persists, check that backend is running at http://localhost:8001"
+  If this persists, check that backend is running at https://7d2majjsda.us-east-1.awsapprunner.com/api"
   ```
 - **Rationale**: Helps operators self-diagnose connection issues.
 

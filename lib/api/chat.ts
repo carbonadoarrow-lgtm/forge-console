@@ -27,6 +27,6 @@ export const chatApi = {
   // (Optional) stream URL helper
   getStreamUrl: (sessionId: string) =>
     `${
-      process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"
+      process.env.NEXT_PUBLIC_API_BASE_URL || "https://7d2majjsda.us-east-1.awsapprunner.com/api"
     }/api/chat/sessions/${sessionId}/stream`,
 };

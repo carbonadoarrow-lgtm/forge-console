@@ -28,7 +28,7 @@ cp .env.example .env.local
 
 Edit `.env.local`:
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+NEXT_PUBLIC_API_BASE_URL=https://7d2majjsda.us-east-1.awsapprunner.com/api
 ```
 
 **Note:** The app will work with mock data by default.
