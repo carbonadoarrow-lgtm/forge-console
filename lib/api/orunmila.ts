@@ -1,5 +1,5 @@
 import { apiClient } from './client';
-import { Skill, Mission, Run, Report, DailyState, Cycle4WState, StructuralState } from '../types';
+import { Skill, Mission, Run, Report, DailyState, CycleState, StructuralState } from '../types';
 
 // Orunmila Skills API
 export const orunmilaSkillsApi = {
@@ -32,7 +32,7 @@ export const orunmilaReportsApi = {
 export const orunmilaStateApi = {
   getDaily: () => apiClient.get<DailyState>('/api/orunmila/state/daily'),
   getDailyHistory: () => apiClient.get<DailyState[]>('/api/orunmila/state/daily/history'),
-  getCycle4W: () => apiClient.get<Cycle4WState>('/api/orunmila/state/cycle-4w'),
+  getCycle4W: () => apiClient.get<CycleState>('/api/orunmila/state/cycle-4w'),
   getStructural: () => apiClient.get<StructuralState>('/api/orunmila/state/structural'),
 };
 
