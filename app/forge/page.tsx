@@ -72,7 +72,7 @@ export default function ForgeHomePage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {statusLoading ? '...' : <StatusBadge status={systemStatus?.overall || 'ok'} />}
+              {statusLoading ? '...' : <StatusBadge status={(systemStatus as any)?.overall || 'ok'} />}
             </div>
             <p className="text-xs text-muted-foreground">
               All subsystems operational
