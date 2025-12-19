@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { API_ENDPOINTS } from "./api-config"
-import type { Skill, Mission, Run, Report, Artifact } from "./types"
+import { API_ENDPOINTS } from "../api-config"
+import type { Skill, Mission, Run, Report, Artifact } from "../types"
 
 // Fetch utilities
 async function fetchJSON<T>(url: string): Promise<T> {
