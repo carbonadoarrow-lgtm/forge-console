@@ -79,7 +79,7 @@ export default function ChatPage() {
       <div className="mb-6">
         <h1 className="text-3xl font-bold flex items-center gap-2">
           <MessageCircle className="h-8 w-8" />
-          Forge Console Chat
+          Midas Cercle Chat
         </h1>
         <p className="text-muted-foreground mt-2">
           Operator chat with Forge OS for troubleshooting and advisory conversations
