@@ -39,7 +39,7 @@ export function SphereSwitcher() {
           variant={persona === "leto" ? "default" : "ghost"}
           size="sm"
           onClick={() => setPersona("leto")}
-          className="text-xs h-8 bg-primary text-primary-foreground"
+          className="text-xs h-8 bg-green-600 hover:bg-green-700 text-white"
         >
           LETO
         </Button>
