@@ -43,13 +43,13 @@ export default function ActivityPage() {
       : null;
 
   const totalJobs = jobs?.length ?? 0;
-  const runningJobs = jobs?.filter((j: ConsoleJob) => j.status === "running").length ?? 0;
-  const failedJobs = jobs?.filter((j: ConsoleJob) => j.status === "failed").length ?? 0;
-  const pendingJobs = jobs?.filter((j: ConsoleJob) => j.status === "pending").length ?? 0;
-  const succeededJobs = jobs?.filter((j: ConsoleJob) => j.status === "succeeded").length ?? 0;
+  const runningJobs = jobs?.filter((j: ConsoleJob) => j?.status === "running").length ?? 0;
+  const failedJobs = jobs?.filter((j: ConsoleJob) => j?.status === "failed").length ?? 0;
+  const pendingJobs = jobs?.filter((j: ConsoleJob) => j?.status === "pending").length ?? 0;
+  const succeededJobs = jobs?.filter((j: ConsoleJob) => j?.status === "succeeded").length ?? 0;
 
   // Find latest health check job
-  const healthCheckJobs = jobs?.filter((j: ConsoleJob) => j.name.startsWith("forge_repo_health_check")) || [];
+  const healthCheckJobs = jobs?.filter((j: ConsoleJob) => j?.name?.startsWith("forge_repo_health_check")) || [];
   const latestHealthCheck = healthCheckJobs.length > 0
     ? healthCheckJobs.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())[0]
     : null;
