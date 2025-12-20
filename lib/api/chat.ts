@@ -4,11 +4,11 @@ import { ChatSession, ChatMessage } from "../types";
 export const chatApi = {
   // List all chat sessions
   listSessions: () =>
-    apiClient.get<ChatSession[]>("/api/chat/sessions"),
+    apiClient.get<ChatSession[]>("/chat/sessions"),
 
   // Create a new chat session
   createSession: (data: { title?: string; sphere?: string; context?: any }) =>
-    apiClient.post<ChatSession>("/api/chat/sessions", data),
+    apiClient.post<ChatSession>("/chat/sessions", data),
 
   // Get a specific session
   getSession: (id: string) =>
