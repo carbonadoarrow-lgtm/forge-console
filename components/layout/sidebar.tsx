@@ -3,94 +3,40 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import {
-  Home,
-  Zap,
-  Target,
-  Play,
-  FileText,
-  Package,
-  Settings,
-  Activity,
-  TrendingUp,
-  Calendar,
-  Database,
-  MessageSquare,
-  Briefcase,
-} from "lucide-react"
 import { useSphere } from "@/lib/contexts/sphere-context"
-import type { NavItem } from "@/lib/types"
+import { usePersona } from "@/lib/persona/use-persona"
+import { forgeNav, orunmilaNav, memberNav, type NavItem } from "@/components/sidebar/nav-items"
 
-const forgeNav: NavItem[] = [
-  {
-    title: "Activity",
-    children: [
-      { title: "Overview", href: "/forge/activity", icon: Activity },
-      { title: "Chat", href: "/forge/chat", icon: MessageSquare },
-      { title: "Reports", href: "/forge/missions/mission-1/reports", icon: FileText },
-      { title: "Jobs", href: "/forge/jobs", icon: Briefcase },
-    ],
-  },
-  { title: "Overview", href: "/forge", icon: Home },
-  {
-    title: "Execution",
-    children: [
-      { title: "Skills", href: "/forge/skills", icon: Zap },
-      { title: "Missions", href: "/forge/missions", icon: Target },
-      { title: "Runs", href: "/forge/runs", icon: Play },
-    ],
-  },
-  {
-    title: "Knowledge & Reports",
-    children: [
-      { title: "Reports", href: "/forge/reports", icon: FileText },
-      { title: "Artifacts", href: "/forge/artifacts", icon: Package },
-    ],
-  },
-  {
-    title: "System",
-    children: [
-      { title: "Status", href: "/forge/system", icon: Activity },
-      { title: "Settings", href: "/forge/settings", icon: Settings },
-    ],
-  },
-]
-
-const orunmilaNav: NavItem[] = [
-  { title: "Oracle Overview", href: "/orunmila", icon: Home },
-  {
-    title: "Execution",
-    children: [
-      { title: "XAU Skills", href: "/orunmila/skills", icon: Zap },
-      { title: "Missions", href: "/orunmila/missions", icon: Target },
-    ],
-  },
-  {
-    title: "State",
-    children: [
-      { title: "Daily State", href: "/orunmila/state/daily", icon: Calendar },
-      { title: "4-Week Cycle State", href: "/orunmila/state/cycle-4w", icon: TrendingUp },
-      { title: "Structural State", href: "/orunmila/state/structural", icon: Database },
-    ],
-  },
-  {
-    title: "Knowledge & Reports",
-    children: [
-      { title: "Reports", href: "/orunmila/reports", icon: FileText },
-    ],
-  },
-  {
-    title: "System",
-    children: [
-      { title: "Oracle Dashboard", href: "/orunmila/oracle", icon: Activity },
-    ],
-  },
-]
 
 export function Sidebar() {
   const pathname = usePathname()
   const { sphere } = useSphere()
-  const navItems = sphere === "forge" ? forgeNav : orunmilaNav
+  const { persona } = usePersona()
+  
+  // Get base navigation based on sphere
+  let baseNavItems: NavItem[] = []
+  if (sphere === "forge") {
+    baseNavItems = forgeNav
+  } else {
+    baseNavItems = orunmilaNav
+  }
+  
+  // If we're in member area, show member navigation
+  if (pathname.startsWith("/member")) {
+    baseNavItems = memberNav
+  }
+  
+  // Filter navigation items based on persona
+  const filterByPersona = (items: NavItem[]): NavItem[] => {
+    return items
+      .filter(item => !item.personas || item.personas.includes(persona))
+      .map(item => ({
+        ...item,
+        children: item.children ? filterByPersona(item.children) : undefined
+      }))
+  }
+  
+  const navItems = filterByPersona(baseNavItems)
 
   return (
     <div className="flex h-full w-64 flex-col border-r bg-background">

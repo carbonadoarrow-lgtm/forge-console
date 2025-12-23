@@ -1,5 +1,7 @@
 // Core types for Forge Console
 
+import { Persona } from "@/lib/persona/persona";
+
 export type Sphere = 'forge' | 'orunmila';
 
 export type RunStatus = 'queued' | 'running' | 'succeeded' | 'failed' | 'cancelled';
@@ -181,4 +183,5 @@ export interface NavItem {
   href: string;
   icon?: string;
   children?: NavItem[];
+  personas?: Persona[];
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import { SphereSwitcher } from "./sphere-switcher"
+import { PersonaToggle } from "@/components/header/persona-toggle"
 import { Button } from "@/components/ui/button"
 import { MessageSquare, User, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -20,6 +21,7 @@ export function TopBar({ onChatOpen }: TopBarProps) {
 
       <div className="flex items-center gap-4">
         <SphereSwitcher />
+        <PersonaToggle />
         {onChatOpen && (
           <Button
             variant="outline"
