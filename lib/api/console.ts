@@ -8,22 +8,22 @@ import {
 
 export const consoleApi = {
   getChatSessions: () =>
-    apiClient.get<ConsoleChatSession[]>("/api/console/chat/sessions"),
+    apiClient.get<ConsoleChatSession[]>("/chat/sessions"),
 
   getMissionReports: (missionId: string) =>
     apiClient.get<ConsoleMissionReport[]>(
-      `/api/console/missions/${missionId}/reports`,
+      `/forge/missions/${missionId}/reports`,
     ),
 
-  // Jobs endpoints
-  listJobs: () => apiClient.get<ConsoleJob[]>("/api/console/jobs"),
+  // Jobs endpoints - using /forge/jobs as that's what the backend provides
+  listJobs: () => apiClient.get<ConsoleJob[]>("/forge/jobs"),
 
   getJob: (id: string) =>
-    apiClient.get<ConsoleJob>(`/api/console/jobs/${id}`),
+    apiClient.get<ConsoleJob>(`/forge/jobs/${id}`),
 
   createJob: (job: ConsoleJob) =>
-    apiClient.post<ConsoleJob>("/api/console/jobs", job),
+    apiClient.post<ConsoleJob>("/forge/jobs", job),
 
   updateJobStatus: (id: string, status: ConsoleJobStatus) =>
-    apiClient.patch<ConsoleJob>(`/api/console/jobs/${id}/status?status=${status}`),
+    apiClient.patch<ConsoleJob>(`/forge/jobs/${id}/status?status=${status}`),
 };

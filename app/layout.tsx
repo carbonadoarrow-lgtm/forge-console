@@ -7,7 +7,7 @@ import { ShellLayout } from "@/components/layout/shell-layout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Forge Console",
+  title: "Midas Cercle",
   description: "A unified web application for managing Forge OS and Orunmila systems.",
 };
 

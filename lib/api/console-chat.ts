@@ -11,11 +11,11 @@ import { ConsoleChatSession, ConsoleChatMessage } from "../types";
 export const consoleChatApi = {
   // List all console chat sessions
   listSessions: () =>
-    apiClient.get<ConsoleChatSession[]>("/api/console/chat/sessions"),
+    apiClient.get<ConsoleChatSession[]>("/console/chat/sessions"),
 
   // Create a new console chat session
   createSession: (data: { title?: string; sphere?: string; context?: any }) =>
-    apiClient.post<ConsoleChatSession>("/api/console/chat/sessions", data),
+    apiClient.post<ConsoleChatSession>("/console/chat/sessions", data),
 
   // Get a specific console chat session
   getSession: (sessionId: string) =>

@@ -16,7 +16,7 @@ export function TopBar({ onChatOpen }: TopBarProps) {
   return (
     <div className="flex h-14 items-center justify-between border-b bg-background px-6">
       <div className="flex items-center gap-4">
-        <h1 className="text-xl font-bold">Forge Console</h1>
+        <h1 className="text-xl font-bold">Midas Cercle</h1>
       </div>
 
       <div className="flex items-center gap-4">
